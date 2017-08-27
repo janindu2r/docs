@@ -142,3 +142,64 @@ function wedocs_get_posts_children( $parent_id, $post_type = 'page' ){
 }
 
 endif;
+
+
+// Start FOOTER OPTIONS
+function theme_settings_page()
+{
+    ?>
+	    <div class="wrap">
+	    <h1>Company details</h1>
+	    <form method="post" action="options.php">
+	        <?php
+	            settings_fields("section");
+	            do_settings_sections("theme-options");      
+	            submit_button(); 
+	        ?>          
+	    </form>
+		</div>
+	<?php
+
+
+}
+
+function add_theme_menu_item()
+{
+	add_menu_page("Edit company details", "Company details", "manage_options", "theme-panel", "theme_settings_page", null, 99);
+}
+
+add_action("admin_menu", "add_theme_menu_item");
+
+
+function display_desc_element()
+{
+	?>
+    	<textarea rows="6" style="width: 500px" type="text" name="footer_number" id="footer_number"><?php echo get_option('footer_number'); ?></textarea>
+    <?php
+}
+function display_address_element()
+{
+	?>
+	     <textarea rows="6" style="width: 500px" type="text" name="footer_address" id="footer_address"  ><?php echo get_option('footer_address'); ?></textarea> 
+
+    <?php
+}
+
+
+function display_theme_panel_fields()
+{
+	add_settings_section("section", "", null, "theme-options");
+	
+
+	add_settings_field("footer_number", "Footer Company Number.", "display_desc_element", "theme-options", "section");
+	add_settings_field("footer_address", "Footer Company Address", "display_address_element", "theme-options", "section");
+
+    // register_setting("section", "footer_copyright_text");
+    // register_setting("section", "footer_contact");
+    register_setting("section", "footer_number");
+    register_setting("section", "footer_address");
+}
+
+add_action("admin_init", "display_theme_panel_fields");
+
+// END FOOTER OPTIONS

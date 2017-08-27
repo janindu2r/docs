@@ -1,28 +1,35 @@
-<header class="banner navbar navbar-default navbar-static-top" role="banner">
-	<div class="container">
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-				<span class="sr-only"><?php _e( 'Toggle navigation', 'wedocs' ); ?></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</button>
-			<a class="navbar-brand" href="<?php echo home_url(); ?>/"><?php bloginfo('name'); ?></a>
+
+
+<div class="top-search-form" id="top-search-form" style="background: #526006 url(<?php bloginfo('template_url'); ?>/assets/img/search-header.jpg) center 10% no-repeat;">
+	<header class="banner navbar navbar-default navbar-static-top" role="banner">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="sr-only"><?php _e( 'Toggle navigation', 'wedocs' ); ?></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="<?php echo home_url(); ?>/"><?php bloginfo('name'); ?></a>
+			</div>
+
+			<nav class="collapse navbar-collapse" role="navigation">
+				<?php
+					if ( has_nav_menu('primary_navigation') ) :
+						wp_nav_menu( array( 'theme_location' => 'primary_navigation', 'menu_class' => 'nav navbar-nav') );
+					endif;
+				?>
+			</nav>
 		</div>
-
-		<nav class="collapse navbar-collapse" role="navigation">
-			<?php
-				if ( has_nav_menu('primary_navigation') ) :
-					wp_nav_menu( array( 'theme_location' => 'primary_navigation', 'menu_class' => 'nav navbar-nav') );
-				endif;
-			?>
-		</nav>
-	</div>
-</header>
-
-<div class="top-search-form" id="top-search-form">
+	</header>
 	<div class="container">
-
+		<div class="row">
+			<div class="banner-text">
+				<h1>
+					<?php echo roots_title(); ?>
+				</h1>
+			</div>
+		</div>			
 	    <div class="row">
 	        <div class="col-md-8 col-md-offset-2">
 				<form role="search" method="get" class="search-form" action="<?php echo home_url('/'); ?>">
@@ -75,4 +82,5 @@
 	        </div>
 	    </div>
 	</div>
+	
 </div>

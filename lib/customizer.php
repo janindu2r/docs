@@ -57,7 +57,7 @@ class WeDocs_Customizer {
             'type' => 'text'
         ));
 
-        // footer text
+        // footer text: Copyright
         $wp_customize->add_setting( 'wedocs_footer_text', array(
             'capability' => 'edit_theme_options',
             'default' => sprintf( __( '&copy; %d. All rights are reserved.', 'wedocs' ), date( 'Y' ) )
@@ -68,6 +68,19 @@ class WeDocs_Customizer {
             'section' => 'wedocs_text_section',
             'type' => 'text'
         ));
+
+        // footer text: Contact
+        $wp_customize->add_setting( 'wedocs_footer_contact', array(
+            'capability' => 'edit_theme_options',
+            'default' => sprintf( __( '&copy; %d. All rights are reserved.', 'wedocs' ), date( 'Y' ) )
+        ));
+
+        $wp_customize->add_control('wedocs_footer_contact', array(
+            'label' => __( 'Footer Text', 'wedocs' ),
+            'section' => 'wedocs_text_section',
+            'type' => 'text'
+        ));
+
     }
 
     function generate_styles() {

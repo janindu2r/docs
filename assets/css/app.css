@@ -7772,9 +7772,9 @@ button.close {
     Header
     ========================================================================== */
 .banner {
-  background-color: #FC6765;
+  background-color: transparent;
   border: none;
-  margin-bottom: 0;
+  margin-bottom: 5%;
 }
 
 .banner .navbar-header .navbar-brand {
@@ -7822,10 +7822,32 @@ button.close {
 }
 
 .top-search-form {
-  margin-bottom: 35px;
-  padding: 60px 0;
-  background: #526006 url("assets/img/search-header.jpg") center 10% no-repeat;
+  margin-bottom: 65px;
+  padding: 0 0 22px 0;
   position: relative;
+}
+
+.top-search-form .banner-text {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.top-search-form .banner-text h1 {
+  font-size: 50px;
+  color: #FFFFFF;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.17);
+  margin-bottom: 8%;
+  margin-top: 0;
+}
+
+.top-search-form .search-form .input-group {
+  margin-bottom: -82px;
+}
+
+.top-search-form .search-form .search-submit {
+  border-bottom-right-radius: 50px;
+  border-top-right-radius: 50px;
 }
 
 .top-search-form input.search-field {
@@ -7833,6 +7855,8 @@ button.close {
   background-repeat: no-repeat;
   background-position: 14px 13px;
   padding-left: 50px;
+  border-bottom-left-radius: 50px !important;
+  border-top-left-radius: 50px !important;
 }
 
 .top-search-form .form-control:focus:focus {
@@ -8003,6 +8027,111 @@ aside.doc-nav-widget ul.doc-nav-list > li.current_page_ancestor ul.children {
 /* ==========================================================================
     Footer
     ========================================================================== */
+.footer {
+  padding: 15px 0;
+  background: #FC6765;
+  color: #f2f8fb;
+  vertical-align: middle;
+}
+
+.footer__content {
+  font-size: 14px;
+}
+
+.footer__text {
+  margin: 0;
+  padding: 3px 0;
+  font-size: 12px;
+  color: #ffffff;
+}
+
+.footer__text a {
+  color: #ffffff;
+}
+
+.site-map {
+  padding-top: 21px;
+  padding-bottom: 5px;
+  background: #f2f8fb;
+  font-size: 16px;
+  color: #4C4C4C;
+}
+
+.site-map__listitem--header {
+  font-weight: 700;
+  padding: 7px 0;
+}
+
+.site-map__list {
+  text-decoration: none;
+  list-style: none;
+  padding-left: 0;
+  font-size: 14px;
+}
+
+.site-map__list a {
+  text-decoration: none;
+  color: #4C4C4C;
+  padding: 10px 0;
+}
+
+.site-map__links {
+  margin-top: 32px;
+  margin-bottom: 40px;
+}
+
+.site-map__brand {
+  margin-top: 4px;
+  clear: right;
+}
+
+.site-map__brand_image {
+  width: 198px;
+}
+
+.site-map__address {
+  margin-top: 4px;
+  clear: right;
+}
+
+.site-map__address_list {
+  margin-bottom: 0;
+  margin-top: 16px;
+  text-decoration: none;
+  list-style: none;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.site-map__address_list_item {
+  padding: 4px 0;
+  color: #4C4C4C;
+}
+
+.site-map .footer-social-links {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.site-map .footer-social-links img {
+  height: 24px;
+  padding: 0;
+  max-width: 100%;
+}
+
+.site-map .footer-social-links a {
+  display: inline-block;
+  padding: 0 15px;
+}
+
+.site-map .footer-social-links li:first-child a {
+  padding: 0 15px 0 0;
+}
+
+.site-map .footer-social-links li {
+  display: inline;
+}
+
 .content-info {
   margin-top: 3rem;
   padding: 1.5rem 0;
@@ -8051,6 +8180,12 @@ aside.doc-nav-widget ul.doc-nav-list > li.current_page_ancestor ul.children {
   border-top: 1px solid #2E2E2E;
 }
 
+@media (min-width: 992px) {
+  .site-map .footer-social-links {
+    margin-bottom: 0;
+  }
+}
+
 /* ==========================================================================
     Base
     ========================================================================== */
@@ -8058,7 +8193,7 @@ body {
   font-family: "MuseoSans", sans-serif;
   background-color: #ffffff;
   font-size: 14px;
-  color: #333;
+  color: #3C4858;
 }
 
 h1,
@@ -8079,17 +8214,24 @@ h6,
   color: inherit;
 }
 
-a {
-  color: #fc4e4c;
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-a:hover {
-  color: #fb3633;
+.no-gutter {
+  padding-right: 0;
+  padding-left: 0;
 }
 
 /* ==========================================================================
     Content
     ========================================================================== */
+.wrap {
+  margin-bottom: 50px;
+}
+
 ul.doc-category {
   margin-bottom: 4em;
   border: 1px solid #eee;
@@ -8227,7 +8369,6 @@ ul.doc-category li.doc h3:before {
   margin: 0 0 25px 0;
   padding: 0 0 25px 0;
   font-weight: bold;
-  border-bottom: 1px solid #eee;
 }
 
 .hentry .entry-content img {
@@ -8307,6 +8448,16 @@ ul.doc-category li.doc h3:before {
 .single-docs .doc-single-content.skip-sidebar {
   padding-left: 15px;
   border-left: 0;
+}
+
+.wedocs-docs-single {
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.12);
+}
+
+.doc-logo {
+  max-width: 154px;
+  display: block;
+  margin: 15px 15px 5px;
 }
 
 /* ==========================================================================
