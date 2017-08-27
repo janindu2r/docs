@@ -1,0 +1,43 @@
+/* ==========================================================================
+    Footer
+    ========================================================================== */
+
+.content-info {
+    margin-top: 3rem;
+    padding: 1.5rem 0;
+    border-top: 1px solid $borderColor;
+    background: #333;
+    color: #999;
+    .widget-area {
+        margin-bottom: 15px;
+        padding-bottom: 15px;
+        padding-top: 20px;
+    }
+    .widget {
+        padding-bottom: 15px;
+        h3 {
+            border-bottom: 1px solid #2E2E2E;
+            margin: 0 0 10px 0;
+            padding: 0 0 10px 0;
+            font-weight: 300;
+        }
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            ul.children {
+                padding-left: 10px;
+            }
+            li {
+                padding: 3px 0;
+            }
+        }
+        a {
+            color: #777;
+        }
+    }
+    .copyright {
+        padding-top: 15px;
+        border-top: 1px solid #2E2E2E;
+    }
+}

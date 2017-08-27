@@ -1,0 +1,119 @@
+/*
+ * Side navigation
+ *
+ * Scrollspy and affixed enhanced navigation to highlight sections and secondary
+ * sections of docs content.
+ */
+
+
+/* ==========================================================================
+    Sidebar
+    ========================================================================== */
+
+.sidebar {
+    h3 {
+        margin: 0 0 15px 0;
+        padding: 0 0 15px 0;
+        font-weight: 300;
+        border-bottom: 1px solid $borderColor;
+    }
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+aside.doc-nav-widget {
+    h3 {
+        font-weight: bold;
+        border-bottom: 1px solid #ddd;
+        margin: 0 0 15px 0;
+        padding: 0 0 15px 0;
+    }
+    ul.doc-nav-list {
+        li {
+            a {
+                display: block;
+                padding: 8px 20px;
+            }
+            ul.children {
+                list-style: none;
+                margin: 15px 0 15px 26px;
+                padding: 0;
+                border: none;
+                border-left: 1px solid #ddd;
+                display: none;
+                a {
+                    color: #333333;
+                    font-weight: normal;
+                }
+            }
+        }
+        >li.current_page_parent,
+        >li.current_page_item,
+        >li.current_page_ancestor,
+        {
+            >a {
+                background: $mainColor;
+                color: #fff;
+            }
+            li.current_page_item>a {
+                border-left: 2px solid $mainColor;
+                color: #191919;
+                font-weight: bold;
+            }
+            ul.children {
+                display: block;
+            }
+        }
+    }
+}
+
+
+/* By default it's not affixed in mobile views, so undo that */
+
+.bs-sidebar {
+    position: static;
+    // background: #F5F5F5;
+    margin: 0;
+    padding: 0;
+    z-index: -1;
+    position: fixed;
+    min-width: 150px;
+    ul {
+        margin: 0;
+        padding: 0;
+        li {
+            border-bottom: 1px solid #ECECEC;
+        }
+    }
+    a {
+        display: block;
+        font-size: 13px;
+        font-weight: 500;
+        color: #999;
+        padding: 8px 20px;
+        &:hover,
+        &:focus {
+            // padding-left: 19px;
+            color: $mainColor;
+            text-decoration: none;
+            background-color: transparent;
+            border-left: 1px solid $mainColor;
+        }
+        .fa {
+            display: none;
+        }
+    }
+    .active {
+        a,
+        a:hover,
+        a:focus {
+            font-weight: bold;
+            color: $mainColor;
+            background-color: transparent;
+            border-left: 2px solid $mainColor;
+        }
+    }
+}

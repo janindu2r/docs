@@ -1,0 +1,390 @@
+/*
+Theme Name: weDocs
+Theme URI: http://wedevs.com/theme/wedocs/
+Description: A documentation theme for WordPress
+Version: 0.1
+Author: Tareq hasan
+Author URI: http://tareq.wedevs.com/
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: green
+*/
+
+@font-face {
+    font-family: 'MuseoSans';
+    src: url('../fonts/MuseoSans_300-webfont.woff2') format('woff2'), url('../fonts/MuseoSans_300-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MuseoSans';
+    src: url('../fonts/MuseoSans_500-webfont.woff2') format('woff2'), url('../fonts/MuseoSans_300-webfont.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MuseoSans';
+    src: url('../fonts/MuseoSans_700-webfont.woff2') format('woff2'), url('../fonts/MuseoSans_700-webfont.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@import "bootstrap/bootstrap";
+@import "variables";
+@import "header";
+@import "sidenav";
+@import "footer";
+//
+//  Base colors
+//
+
+/* ==========================================================================
+    Base
+    ========================================================================== */
+
+body {
+    font-family: $base-font-family;
+    background-color: $primary-bg;
+    font-size: 14px;
+    color: #333;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    font-family: $base-font-family;
+    font-weight: 500;
+    line-height: 1.1;
+    color: inherit;
+}
+
+a {
+    color: darken( $mainColor, 5%);
+    &:hover {
+        color: darken( $mainColor, 10%);
+    }
+}
+
+
+/* ==========================================================================
+    Content
+    ========================================================================== */
+
+ul.doc-category {
+    margin-bottom: 4em;
+    border: 1px solid $borderColor;
+    border-left: 0;
+    border-right: 0;
+    list-style: none;
+    margin: 0 0 50px 0;
+    padding: 0;
+    li.doc,
+    li.category {
+        width: 50%;
+        margin: 0;
+        float: left;
+        padding: 2em 0;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        border-bottom: 1px dotted $borderColor;
+        min-height: 110px;
+        &:nth-child(odd) {
+            padding-right: 2em;
+            border-right: 1px dotted $borderColor;
+            clear: both;
+        }
+        &:nth-child(even) {
+            padding-left: 2em;
+        }
+        h3 {
+            margin: 0;
+            position: relative;
+            a {
+                font-size: 16px;
+                display: block;
+                padding-left: 30px;
+            }
+            &:before {
+                color: rgba(37, 90, 140, 0.2);
+                font-family: 'FontAwesome';
+                display: inline-block;
+                font-size: 20px;
+                font-weight: normal;
+                line-height: 100%;
+                width: 1.758em;
+                position: absolute;
+                top: 0;
+                left: 0;
+                content: "\f0b1";
+            }
+        }
+        .inside {
+            padding-left: 30px;
+            padding-top: 10px;
+            ul.child-cats {
+                padding: 15px 0 0 20px;
+                clear: both;
+                display: block;
+                >li {
+                    padding-bottom: 15px;
+                    float: left;
+                    width: 48%;
+                    padding-right: 2%;
+                    list-style: none;
+                    &:nth-child(2n+1) {
+                        clear: both;
+                    }
+                    >a {
+                        font-weight: bold;
+                    }
+                    ul.children {
+                        padding: 5px 0 0 15px;
+                    }
+                }
+            }
+        }
+    }
+    li.doc {
+        h3:before {
+            content: "\f02d";
+        }
+    }
+}
+
+
+/* ==========================================================================
+    Primary Content
+    ========================================================================== */
+
+.main {
+    h2.category-title {
+        margin: 15px 0 20px 0;
+        font-weight: 300;
+    }
+}
+
+
+/* Gallery Shortcode */
+
+.gallery-row {
+    padding: 15px 0;
+}
+
+
+/* ==========================================================================
+    Posts
+    ========================================================================== */
+
+.hentry {
+    position: relative;
+    min-height: 300px;
+}
+
+.hentry header,
+.page-header {
+    border: none;
+    margin: 0;
+    padding: 0;
+    h1 {
+        margin: 0 0 25px 0;
+        padding: 0 0 25px 0;
+        font-weight: bold;
+        border-bottom: 1px solid $borderColor;
+    }
+}
+
+.hentry time {}
+
+.hentry .byline {}
+
+.hentry .entry-content {
+    img {
+        max-width: 100%;
+        border: 1px solid $borderColor;
+        margin-top: 20px;
+        margin-bottom: 30px;
+        padding: 25px;
+        height: auto;
+        background: #F9F9F9;
+        display: block;
+    }
+    .page-header {
+        padding-bottom: 9px;
+        margin: 40px 0 20px;
+        border-bottom: 1px solid #eee;
+    }
+    h2 {
+        border-bottom: 1px solid $borderColor;
+        padding-bottom: 15px;
+        margin-bottom: 20px;
+        margin-top: 70px;
+        &:first-of-type {
+            margin-top: 20px;
+        }
+    }
+    ol li,
+    ul li {
+        padding: 10px 0;
+    }
+}
+
+.hentry .article-child {
+    margin-top: 25px;
+    h3 {
+        margin: 0 0 15px 0;
+        padding: 0 0 10px 0;
+        border-bottom: 1px solid $borderColor;
+    }
+}
+
+.hentry footer {}
+
+.wedoc-feedback-wrap {
+    padding-top: 15px;
+    text-align: center;
+    margin-top: 40px;
+    span {
+        margin-right: 15px;
+    }
+    a {
+        font-weight: bold;
+        padding: 0 5px;
+        border-radius: 3px;
+    }
+    a.positive {
+        color: #6a9c1f;
+        border: 1px solid #6a9c1f;
+    }
+    a.negative {
+        color: #ac2d22;
+        border: 1px solid #ac2d22;
+    }
+}
+
+.single-docs .doc-single-content {
+    border-left: 1px solid #ddd;
+    padding-left: 25px;
+    &.skip-sidebar {
+        padding-left: 15px;
+        border-left: 0;
+    }
+}
+
+
+/* ==========================================================================
+    WordPress Generated Classes
+    See: http://codex.wordpress.org/CSS#WordPress_Generated_Classes
+    ========================================================================== */
+
+.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+.aligncenter,
+div.aligncenter {
+    display: block;
+    margin: 5px auto 5px auto;
+}
+
+.alignright {
+    float: right;
+    margin: 5px 0 20px 20px;
+}
+
+.alignleft {
+    float: left;
+    margin: 5px 20px 20px 0;
+}
+
+.aligncenter {
+    display: block;
+    margin: 5px auto 5px auto;
+}
+
+a img.alignright {
+    float: right;
+    margin: 5px 0 20px 20px;
+}
+
+a img.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+a img.alignleft {
+    float: left;
+    margin: 5px 20px 20px 0;
+}
+
+a img.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.wp-caption {
+    background: #fff;
+    // border: 1px solid #f0f0f0;
+    border: none;
+    max-width: 96%;
+    /* Image does not overflow the content area */
+    padding: 0;
+    text-align: center;
+}
+
+.wp-caption.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignleft {
+    margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignright {
+    margin: 5px 0 20px 20px;
+}
+
+.wp-caption img {
+    border: 0 none;
+    height: auto;
+    margin: 0;
+    max-width: 98.5%;
+    padding: 0;
+    width: auto;
+}
+
+.wp-caption .wp-caption-text {
+    font-size: 11px;
+    line-height: 17px;
+    margin: 0;
+    padding: 0 4px 5px;
+    background-color: #eee;
+}
+
+
+/* ==========================================================================
+    Media Queries
+    ========================================================================== */
+
+@media (min-width: $screen-sm-min) {}
+
+@media (min-width: $screen-md-min) {}
+
+@media (min-width: $screen-lg-min) {}
+
+@media (max-width: 767px) {
+    .banner .navbar-nav {
+        float: none;
+    }
+}
