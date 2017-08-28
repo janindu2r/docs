@@ -6,7 +6,7 @@ jQuery(function($) {
         e.preventDefault();
 
         // return if any request is in process already
-        if ( pending_ajax ) {
+        if (pending_ajax) {
             return;
         }
 
@@ -31,7 +31,7 @@ jQuery(function($) {
 
     $('#top-search-form .dropdown-menu').on('click', 'a', function(e) {
         e.preventDefault();
-        var param = $(this).attr("href").replace("#","");
+        var param = $(this).attr("href").replace("#", "");
         var concept = $(this).text();
         $('#top-search-form span#search_concept').text(concept);
         $('.input-group #search_param').val(param);

@@ -16,7 +16,8 @@ require_once locate_template( '/lib/scripts.php' );         // Scripts and style
 require_once locate_template( '/lib/custom.php' );          // Custom functions
 require_once locate_template( '/lib/customizer.php' );      // Theme customizer
 require_once locate_template( '/lib/walker-docs.php' );      // Theme customizer
-
+require get_template_directory() . '/widgets/my-featured-content.php';
+ 
 
 function wedocs_ajax_feedback() {
     check_ajax_referer( 'wedocs-ajax' );
@@ -203,3 +204,22 @@ function display_theme_panel_fields()
 add_action("admin_init", "display_theme_panel_fields");
 
 // END FOOTER OPTIONS
+
+
+// wedocs widgets
+function wedocs_widgets_init() {
+    
+    register_sidebar( array(
+        'name' => __( 'Home blocks', 'wedocs' ),
+        'id' => 'home_block_widget',
+        'description' => __( 'The main sidebar appears on the right on each page except the front page template', 'wedocs' ),
+        'before_widget' => '',
+        'after_widget' => '',
+        'before_title' => '',
+        'after_title' => '',
+    ) );
+
+
+    }
+
+add_action( 'widgets_init', 'wedocs_widgets_init' );

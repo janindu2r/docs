@@ -34,6 +34,7 @@ Tags: green
 @import "bootstrap/bootstrap";
 @import "variables";
 @import "header";
+@import "partner-profilr";
 @import "sidenav";
 @import "footer";
 //
@@ -93,6 +94,15 @@ ul {
 
 .wrap {
     margin-bottom: 50px;
+}
+
+.wedocs-breadcrumb {
+    li:nth-child(4) {
+        display: none !important;
+    }
+    li:nth-child(5) {
+        display: none !important;
+    }
 }
 
 ul.doc-category {
